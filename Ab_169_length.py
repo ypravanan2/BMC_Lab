@@ -44,12 +44,14 @@ for n in filenames:
             Id_arr.append(Id)
             out_not_169.append(Seq)
             out_not_169.append(Len)
+    # Printing only this file executed explicitly(not imported)
+    if __name__ == __main__:
     # Displaying primary info for the user
-    print("\n" + filename_write + ":")
-    print("There are", int(len(out_169) / 2),
-          'sequences having seq. length = 169, and these are written in "' + filename_write + '_len_169.csv".')
-    print("There are", int(len(out_not_169) / 3),
-          'sequences NOT having seq. length = 169, and these are written in "' + filename_write + '_len_not_169.csv".')
+        print("\n" + filename_write + ":")
+        print("There are", int(len(out_169) / 2),
+              'sequences having seq. length = 169, and these are written in "' + filename_write + '_len_169.csv".')
+        print("There are", int(len(out_not_169) / 3),
+              'sequences NOT having seq. length = 169, and these are written in "' + filename_write + '_len_not_169.csv".')
 
     # Writing the extracted info as a csv file
     with open(path_wrt + "/" + filename_write + '_len_169.csv', 'w') as output_yp:
