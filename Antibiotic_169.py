@@ -1,12 +1,12 @@
 """
 --Separation of fasta sequences of genes of Acinetobacter Baumannii wrt length( as 169 & other)--
---Authors : Yatindrapravanan Narasimhan & Subachandran--
+--Authors : Yatindrapravanan Narasimhan & Subachandran JK--
 """
 import Ab_169_length
-import Antibiotic
+import Antibiotic as AB
 
-Freq_dict = Antibiotic.freq.copy()
-Antibiotic = Antibiotic.antibiotic.copy()
+Freq_dict = AB.freq.copy()
+Antibiotic = AB.antibiotic.copy()
 Ids = [str(j) for i in Ab_169_length.Id_Seq for j in i.keys()]
 Seq = [str(j) for i in Ab_169_length.Id_Seq for j in i.values()]
 Seq_dict = dict(zip(Ids, Seq))
@@ -38,5 +38,5 @@ with open("TMP-SMA_Antibiotic-wise_USA.csv", "w+") as yp_subi:
     for i in Antibiotic_dict.keys():
         yp_subi.write("\"" + i + "\",\"" + str(Antibiotic_dict[i]) + "\"" + "\n")
 
-Antibiotic.write_file(Freq_dict, "/Users/yati/PycharmProjects/Thamo-Sir_Lab/169_TMP-SMA_USA.csv")
+AB.write_file(Freq_dict, "C:/Users/user/OneDrive/Desktop/python/Thamo Sir/Pakistan/169_TMP-SMA_USA.csv")
 
